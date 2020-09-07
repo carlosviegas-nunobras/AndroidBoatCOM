@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <io.github.controlwear.virtual.joystick.android.JoystickView
+        android:id="@+id/joystickview"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.606"
+        custom:JV_backgroundColor="#25221e"
+        custom:JV_borderColor="@color/black"
+        custom:JV_borderWidth="4dp"
+        custom:JV_buttonColor="#FF0000"
+        custom:JV_buttonSizeRatio="15%"
+        custom:JV_fixedCenter="false" />
+
+    <SeekBar
+        android:id="@+id/speedSlider"
+        android:layout_width="334dp"
+        android:layout_height="55dp"
+        android:maxHeight="100dp"
+        android:max="100"
+        android:progress="0"
+
+        android:progressDrawable="@drawable/seek_bar"
+
+        android:thumb="@drawable/seek_thumb"
+        app:layout_constraintBottom_toTopOf="@+id/joystickview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

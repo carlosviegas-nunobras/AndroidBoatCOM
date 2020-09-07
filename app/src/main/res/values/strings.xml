@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PRJ_</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="monotor">Monotorização</string>
+    <string name="sair">Sair</string>
+    <string name="controlo">Controlo</string>
+    <string name="trajloc">Trajeto e Localização</string>
+    <string name="BoatCom">BoatCom</string>
+    <string name="Input_info">Introduza o IP da embarcação</string>
+    <string name="conectar">Conectar</string>
+    <string-array name="speedTestRangeValues">
+        <item>0</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>500</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>5000</item>
+    </string-array>
+</resources>

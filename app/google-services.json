@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "176514959128",
+    "firebase_url": "https://android-boat-com.firebaseio.com",
+    "project_id": "android-boat-com",
+    "storage_bucket": "android-boat-com.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:176514959128:android:0d16ed02e37a76df66406d",
+        "android_client_info": {
+          "package_name": "com.prj.androidboatcom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "176514959128-m0pqcigvrjpm6hgac4bflvsljtbib94o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwcBqzmp5vgbxtq9D4Td1zmLg45bqjqpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "176514959128-m0pqcigvrjpm6hgac4bflvsljtbib94o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
