@@ -1,9 +1,8 @@
 package com.prj.androidboatcom;
 
 
-import android.content.res.Resources;
-
-import com.prj.androidboatcom.ui.home.MonitorFragment;
+import com.prj.androidboatcom.ui.localization.LocalFragment;
+import com.prj.androidboatcom.ui.monitorization.MonitorFragment;
 
 import org.apache.commons.logging.Log;
 import org.ros.message.MessageListener;
@@ -13,22 +12,26 @@ import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Subscriber;
 
 import de.nitri.gauge.Gauge;
+import sensor_msgs.NavSatFix;
 import std_msgs.String;
 
 public class Listener extends AbstractNodeMain {
     private java.lang.String value;
-    Resources res;
     private MonitorFragment monitorFragment;
-    public Listener( MonitorFragment monitorFragment) {
-        value="";
-        this.monitorFragment= monitorFragment;
+    private LocalFragment localFragment;
+    private int type;
 
+    public Listener( MonitorFragment monitorFragment) {
+        this.monitorFragment= monitorFragment;
+        type=0;
+    }
+    public Listener( LocalFragment localFragment) {
+        this.localFragment= localFragment;
+        type=1;
     }
     public Listener(){
 
     }
-
-
     public GraphName getDefaultNodeName() {
         return GraphName.of("rosjava_tutorial_pubsub/listener");
     }
@@ -42,8 +45,8 @@ public class Listener extends AbstractNodeMain {
         subscriber.addMessageListener(new MessageListener<String>() {
             public void onNewMessage(String message) {
                       Gauge g = monitorFragment.findViewById(R.id.gauge2);
+
              g.setValue(Float.parseFloat(message.getData()));
-                System.out.println("bish"+message.getData());
                 log.info("I heard: \"" + message.getData() + "\"");
             }
         });

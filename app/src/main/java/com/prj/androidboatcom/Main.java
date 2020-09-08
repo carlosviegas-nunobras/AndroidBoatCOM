@@ -1,40 +1,22 @@
 package com.prj.androidboatcom;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatCallback;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.view.ActionMode;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 
 import com.google.android.gms.maps.MapView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.prj.androidboatcom.ui.dashboard.LocalFragment;
-import com.prj.androidboatcom.ui.home.MonitorFragment;
-import com.prj.androidboatcom.ui.notifications.ControlFragment;
+import com.prj.androidboatcom.ui.localization.LocalFragment;
 
 import org.ros.android.AppCompatRosActivity;
-import org.ros.android.RosActivity;
-import org.ros.node.NodeConfiguration;
-import org.ros.node.NodeMainExecutor;
-
-import java.net.URI;
-
-import de.nitri.gauge.Gauge;
 
 
 public class Main extends AppCompatActivity {

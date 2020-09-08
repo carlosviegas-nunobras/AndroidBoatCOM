@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.prj.androidboatcom.ui.home.MonitorFragment;
+import com.prj.androidboatcom.ui.monitorization.MonitorFragment;
 
 
 public class Start extends AppCompatActivity {
@@ -67,6 +67,8 @@ Boolean control = false;
 
                 i = new Intent(getApplicationContext(), Main.class);
                 i.putExtra("frag",CONTROL_ID);
+                i.putExtra("masterURI",masterURI);
+
                 Log.d("xa","xaxa");
 
                 startActivity(i);

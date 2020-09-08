@@ -9,7 +9,7 @@ package com.prj.androidboatcom;
 import android.util.Log;
 import android.widget.SeekBar;
 
-import com.prj.androidboatcom.ui.notifications.ControlFragment;
+import com.prj.androidboatcom.ui.control.ControlFragment;
 
 import org.ros.concurrent.CancellableLoop;
 import org.ros.namespace.GraphName;
@@ -17,23 +17,21 @@ import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Publisher;
 
-import javax.security.auth.x500.X500Principal;
-
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 
-public class TalkerC extends AbstractNodeMain {
+public class Talker extends AbstractNodeMain {
     private String topic_name;
 
     private int leftEngine;
     private int rightEngine;
     private ControlFragment controlFragment;
-    public TalkerC(ControlFragment controlFragment) {
+    public Talker(ControlFragment controlFragment) {
         this.controlFragment = controlFragment;
         this.topic_name = "chatter";
 
     }
 
-    public TalkerC(String topic) {
+    public Talker(String topic) {
         this.topic_name = topic;
     }
 

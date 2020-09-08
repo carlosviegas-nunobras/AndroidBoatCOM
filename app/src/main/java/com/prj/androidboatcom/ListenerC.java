@@ -3,8 +3,7 @@ package com.prj.androidboatcom;
 
 import android.content.res.Resources;
 
-import com.prj.androidboatcom.ui.home.MonitorFragment;
-import com.prj.androidboatcom.ui.notifications.ControlFragment;
+import com.prj.androidboatcom.ui.control.ControlFragment;
 
 import org.apache.commons.logging.Log;
 import org.ros.android.view.VirtualJoystickView;
@@ -14,7 +13,6 @@ import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.topic.Subscriber;
 
-import de.nitri.gauge.Gauge;
 import std_msgs.String;
 
 public class ListenerC extends AbstractNodeMain {

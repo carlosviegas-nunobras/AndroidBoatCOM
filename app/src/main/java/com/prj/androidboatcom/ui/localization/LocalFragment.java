@@ -1,4 +1,4 @@
-package com.prj.androidboatcom.ui.dashboard;
+package com.prj.androidboatcom.ui.localization;
 
 import android.Manifest;
 import android.content.pm.PackageManager;

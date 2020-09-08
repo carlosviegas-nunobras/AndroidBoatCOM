@@ -70,7 +70,7 @@ boolean control;
         IDs.add(carlosID);
         mAuth = FirebaseAuth.getInstance();
 
-        createRequest();
+        createRequest(client_ID);
 
         findViewById(R.id.signin).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,11 +83,11 @@ boolean control;
 
 
 
-    private void createRequest() {
+    private void createRequest(String token) {
         // Configure sign-in to request the user's ID, email address, and basic
 // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(client_ID)
+                .requestIdToken(token)
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.prj.androidboatcom">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +20,7 @@
         <activity android:name=".Connect"></activity>
         <activity android:name=".Start"></activity>
         <activity android:name=".Main"></activity>
-        <activity android:name=".ui.notifications.ControlFragment">
+        <activity android:name=".ui.control.ControlFragment">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

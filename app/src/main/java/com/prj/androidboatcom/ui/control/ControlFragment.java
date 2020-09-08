@@ -1,26 +1,19 @@
-package com.prj.androidboatcom.ui.notifications;
+package com.prj.androidboatcom.ui.control;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.SeekBar;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 
-import com.prj.androidboatcom.Listener;
 import com.prj.androidboatcom.ListenerC;
 import com.prj.androidboatcom.R;
+import com.prj.androidboatcom.Talker;
 
 import org.ros.android.RosActivity;
-import org.ros.node.NodeConfiguration;
 import org.ros.node.NodeMainExecutor;
-import org.ros.rosjava_tutorial_pubsub.Talker;
 
 import java.net.URI;
 
@@ -28,7 +21,7 @@ import io.github.controlwear.virtual.joystick.android.JoystickView;
 
 
 public class ControlFragment extends RosActivity {
-    Talker c;
+    Talker talker;
     ListenerC listener;
 
     private int leftEngine;
@@ -63,10 +56,11 @@ public class ControlFragment extends RosActivity {
     }
     @Override
     public void init(NodeMainExecutor nodeMainExecutor) {
+        talker = new Talker(this);
+
 //        NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(getRosHostname(),getMasterUri());
 //        nodeConfiguration.setNodeName("testing");
 //        nodeMainExecutor.execute(listener,nodeConfiguration);
-
         JoystickView joystickView = findViewById(R.id.joystickview);
         joystickView.setOnMoveListener(new JoystickView.OnMoveListener() {
             @Override
