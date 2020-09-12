@@ -5,11 +5,15 @@
     <string name="title_notifications">Notifications</string>
     <string name="monotor">Monotorização</string>
     <string name="sair">Sair</string>
+    <string name="log">Log</string>
+
     <string name="controlo">Controlo</string>
     <string name="trajloc">Trajeto e Localização</string>
     <string name="BoatCom">BoatCom</string>
     <string name="Input_info">Introduza o IP da embarcação</string>
-    <string name="conectar">Conectar</string>
+    <string name="conectar">Guardar URI</string>
+    <string name="sobre">Sobre</string>
+
     <string-array name="speedTestRangeValues">
         <item>0</item>
         <item>100</item>
@@ -21,4 +25,8 @@
         <item>3000</item>
         <item>5000</item>
     </string-array>
+    <string name="sep">SAVE</string>
+    <string name="clear">CLEAR</string>
+    <string name="blt_disc">BLT DISC</string>
+    <string name="blt_anm">BLT ANM</string>
 </resources>

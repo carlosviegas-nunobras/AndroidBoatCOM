@@ -23,49 +23,119 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <de.nitri.gauge.Gauge
-                android:id="@+id/gauge2"
-                android:layout_width="188dp"
-                android:layout_height="268dp"
-                android:layout_gravity="center"
-                app:lowerText="Rake"
-                app:needleShadow="true"
-                gauge:initialValue="0"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                gauge:maxValue="50"
-                gauge:minValue="-50"
-                gauge:scaleColor="@color/black"
-                gauge:totalNicks="150"
-                gauge:valuePerNick="1" />
+                <de.nitri.gauge.Gauge
+                    android:id="@+id/gauge"
+                    android:layout_width="188dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+                    app:lowerText="Adornment"
+                    gauge:initialValue="0"
+                    gauge:maxValue="50"
+                    gauge:minValue="-50"
 
-            <de.nitri.gauge.Gauge
-                android:id="@+id/gauge"
-                android:layout_width="188dp"
-                android:layout_height="268dp"
-                android:layout_gravity="center"
-                app:lowerText="Adornment"
-                gauge:initialValue="0"
-                gauge:maxValue="50"
-                gauge:minValue="-50"
+                    gauge:scaleColor="@color/black"
+                    gauge:totalNicks="150"
+                    gauge:valuePerNick="1" />
 
-                gauge:scaleColor="@color/black"
-                gauge:totalNicks="150"
-                gauge:valuePerNick="1" />
+                <de.nitri.gauge.Gauge
+                    android:id="@+id/gauge2"
+                    android:layout_width="188dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+                    app:lowerText="Rake"
+                    app:needleShadow="true"
+                    gauge:initialValue="0"
 
-            <de.nitri.gauge.Gauge
-                android:id="@+id/gauge3"
-                android:layout_width="188dp"
-                android:layout_height="268dp"
-                android:layout_gravity="center"
+                    gauge:maxValue="50"
+                    gauge:minValue="-50"
+                    gauge:scaleColor="@color/black"
+                    gauge:totalNicks="150"
+                    gauge:valuePerNick="1" />
+            </LinearLayout>
 
-                app:lowerText="Speed"
-                gauge:initialValue="0"
-                gauge:intScale="false"
-                gauge:maxValue="10"
-                gauge:minValue="0"
-                gauge:scaleColor="@color/black"
-                gauge:totalNicks="150"
-                gauge:valuePerNick="0.1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <de.nitri.gauge.Gauge
+                    android:id="@+id/gauge3"
+                    android:layout_width="188dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+
+                    app:lowerText="Speed"
+                    gauge:initialValue="0"
+                    gauge:intScale="false"
+                    gauge:maxValue="10"
+                    gauge:minValue="0"
+                    gauge:scaleColor="@color/black"
+                    gauge:totalNicks="150"
+                    gauge:valuePerNick="0.1" />
+
+                <de.nitri.gauge.Gauge
+                    android:id="@+id/gauge4"
+                    android:layout_width="188dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+
+                    app:lowerText="Battery"
+                    gauge:initialValue="0"
+                    gauge:intScale="true"
+                    gauge:maxValue="100"
+                    gauge:minValue="0"
+                    gauge:scaleColor="@color/black"
+                    gauge:totalNicks="150"
+                    gauge:valuePerNick="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <de.nitri.gauge.Gauge
+                    android:id="@+id/gauge5"
+                    android:layout_width="188dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+
+                    app:lowerText="Left Engine Power"
+                    gauge:initialValue="0"
+                    gauge:intScale="true"
+                    gauge:maxValue="100"
+                    gauge:minValue="0"
+                    gauge:scaleColor="@color/black"
+                    gauge:totalNicks="160"
+                    gauge:valuePerNick="1" />
+
+                <de.nitri.gauge.Gauge
+                    android:id="@+id/gauge6"
+                    android:layout_width="188dp"
+                    android:layout_height="268dp"
+                    android:layout_gravity="center"
+
+                    gauge:lowerText="Right Engine Power"
+                    gauge:initialValue="0"
+                    gauge:intScale="true"
+                    gauge:maxValue="100"
+                    gauge:minValue="0"
+                    gauge:scaleColor="@color/black"
+                    gauge:totalNicks="160"
+                    gauge:valuePerNick="1" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

@@ -7,5 +7,9 @@
     <color name="seek_bar_background">#ababab</color>
     <color name="seek_bar_progress">#FF0000</color>
     <color name="seek_bar_secondary_progress">#3399CC</color>
-
+    <color name="green">#68ff23</color>
+    <color name="yellowGreen">#abff23</color>
+    <color name="yellow">#efef59</color>
+    <color name="grey">#acacac</color>
+    <color name="orange">#ffae00</color>
 </resources>

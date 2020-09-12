@@ -9,6 +9,11 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.prj.androidboatcom.ui.log.Type;
+
+import java.util.Enumeration;
+import java.util.logging.LogManager;
+
 
 public class Connect extends AppCompatActivity {
 
@@ -22,6 +27,9 @@ public class Connect extends AppCompatActivity {
         setContentView(R.layout.activity_connect);
         masterURI = findViewById(R.id.masterURI);
 
+
+
+
     }
 
 
@@ -29,7 +37,7 @@ public class Connect extends AppCompatActivity {
 
         Intent i = new Intent(this, Start.class);
         i.putExtra("masterURI",masterURI.getText().toString());
-
+        Global.saveLog("Master URI '" + masterURI.getText().toString() +"' was saved.", Type.BASE);
         startActivity(i);
     }
 }

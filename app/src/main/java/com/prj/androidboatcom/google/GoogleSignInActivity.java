@@ -40,13 +40,10 @@ import java.util.ArrayList;
 public class GoogleSignInActivity extends AppCompatActivity {
 
 boolean control;
-    public static  GoogleSignInClient mGoogleSignInClient;
-    private static final int RC_SIGN_IN = 4345;
+    private  GoogleSignInClient mGoogleSignInClient;
+    private final int RC_SIGN_IN = 4345;
     private FirebaseAuth mAuth;
-    private static final String client_ID = "176514959128-m0pqcigvrjpm6hgac4bflvsljtbib94o.apps.googleusercontent.com";
-    public static final String carlosID = "sUCF4QA1jBXtKwcSyoUmlzttv9k1";
-    private static final String nunoID = "";
-    private ArrayList<String> IDs = new ArrayList<String>();
+    private static final String CLIENT_ID = "176514959128-m0pqcigvrjpm6hgac4bflvsljtbib94o.apps.googleusercontent.com";
 
     @Override
     protected void onStart() {
@@ -67,10 +64,9 @@ boolean control;
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signin);
 
-        IDs.add(carlosID);
         mAuth = FirebaseAuth.getInstance();
 
-        createRequest(client_ID);
+        createRequest(CLIENT_ID);
 
         findViewById(R.id.signin).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,13 +126,7 @@ boolean control;
 //                            if(IDs.contains(user.getUid())) {
                                 Intent i = new Intent(getApplicationContext(), Connect.class);
                                 startActivity(i);
-//                            }
-//                            else{
-//
-//                                Toast.makeText(GoogleSignInActivity.this, "You have no permission to use the App", Toast.LENGTH_SHORT).show();
-//
-//                                mGoogleSignInClient.signOut();
-//                            }
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(GoogleSignInActivity.this, "No auth for you", Toast.LENGTH_SHORT).show();

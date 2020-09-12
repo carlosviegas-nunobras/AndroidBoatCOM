@@ -1,10 +1,14 @@
 package com.prj.androidboatcom;
 
 
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.prj.androidboatcom.ui.localization.LocalFragment;
 import com.prj.androidboatcom.ui.monitorization.MonitorFragment;
 
 import org.apache.commons.logging.Log;
+import org.ros.internal.node.client.Registrar;
 import org.ros.message.MessageListener;
 import org.ros.namespace.GraphName;
 import org.ros.node.AbstractNodeMain;
@@ -16,7 +20,6 @@ import sensor_msgs.NavSatFix;
 import std_msgs.String;
 
 public class Listener extends AbstractNodeMain {
-    private java.lang.String value;
     private MonitorFragment monitorFragment;
     private LocalFragment localFragment;
     private int type;
@@ -29,27 +32,40 @@ public class Listener extends AbstractNodeMain {
         this.localFragment= localFragment;
         type=1;
     }
-    public Listener(){
 
-    }
     public GraphName getDefaultNodeName() {
-        return GraphName.of("rosjava_tutorial_pubsub/listener");
+        return GraphName.of("android_boatcom/listener");
     }
 
-    public java.lang.String getValue(){
-        return  value;
-    }
+
     public void onStart(ConnectedNode connectedNode) {
-        final Log log = connectedNode.getLog();
-        Subscriber<String> subscriber = connectedNode.newSubscriber("test", "std_msgs/String");
-        subscriber.addMessageListener(new MessageListener<String>() {
-            public void onNewMessage(String message) {
-                      Gauge g = monitorFragment.findViewById(R.id.gauge2);
+        if (type == 0) {
+            final Log log = connectedNode.getLog();
+            Subscriber<String> subscriber = connectedNode.newSubscriber("test", "std_msgs/String");
+            subscriber.addMessageListener(new MessageListener<String>() {
+                public void onNewMessage(String message) {
+                    Gauge g = monitorFragment.findViewById(R.id.gauge2);
+                    Float val = Float.parseFloat(message.getData());
+                    Global.gauge1Values.add(val);
+                    if (Global.gauge1Values.size() < 8) {
+                        g.setValue(val);
+                    } else {
+                        g.setValue(Global.updateGauge(Global.gauge1Values));
+                    }
 
-             g.setValue(Float.parseFloat(message.getData()));
-                log.info("I heard: \"" + message.getData() + "\"");
-            }
-        });
+                    log.info("I heard: \"" + message.getData() + "\"");
+                }
+            });
+        } else if (type == 1) {
+            Subscriber<NavSatFix> subscriber = connectedNode.newSubscriber("gps","sensor_msgs/NavSatFix");
+            subscriber.addMessageListener((new MessageListener<NavSatFix>() {
+                public void onNewMessage(NavSatFix message) {
+                    NavSatFix gps = message;
+                    LatLng pos = new LatLng(gps.getLatitude(),gps.getLongitude());
+                    localFragment.updateLocation(localFragment.getMap(),pos,new PolylineOptions());
+                    Global.mapCoords.add(pos);
+                }
+            }));
+        }
     }
-
 }
