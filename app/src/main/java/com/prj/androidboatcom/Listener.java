@@ -47,7 +47,10 @@ public class Listener extends AbstractNodeMain {
                     Gauge g = monitorFragment.findViewById(R.id.gauge2);
                     Float val = Float.parseFloat(message.getData());
                     Global.gauge1Values.add(val);
-                    if (Global.gauge1Values.size() < 8) {
+                    if(Global.gauge1Values.size()>=10){
+                        Global.gauge1Values.remove(0);
+                    }
+                    if (Global.gauge1Values.size() < 10) {
                         g.setValue(val);
                     } else {
                         g.setValue(Global.updateGauge(Global.gauge1Values));
